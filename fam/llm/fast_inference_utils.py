@@ -36,6 +36,8 @@ import tqdm
 
 from fam.llm.fast_quantize import WeightOnlyInt4QuantHandler, WeightOnlyInt8QuantHandler
 
+import torch._dynamo
+torch._dynamo.config.suppress_errors = True
 
 def device_sync(device):
     if "cuda" in device:
